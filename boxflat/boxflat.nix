@@ -1,4 +1,5 @@
-{ python3, fetchFromGitHub, gtk4, libadwaita, python3Packages, makeWrapper }:
+{ python3, fetchFromGitHub, gtk4, libadwaita, python3Packages
+, gobject-introspection, wrapGAppsHook }:
 
 python3Packages.buildPythonPackage rec {
   pname = "boxflat";
@@ -23,7 +24,7 @@ python3Packages.buildPythonPackage rec {
     python3Packages.pycairo
     python3Packages.pygobject3
   ];
-  nativeBuildInputs = [ makeWrapper ];
+  nativeBuildInputs = [ wrapGAppsHook gobject-introspection ];
 
   preBuild = ''
     cat > setup.py << EOF
