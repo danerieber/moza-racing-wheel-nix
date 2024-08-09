@@ -1,0 +1,12 @@
+diff --git a/Makefile b/Makefile
+index b69220e..390dfcf 100644
+--- a/Makefile
++++ b/Makefile
+@@ -10,7 +10,6 @@ debug:
+ 
+ install: default
+ 	$(MAKE) -C $(KDIR) M=$$PWD modules_install
+-	depmod -A
+ 
+ clean:
+ 	$(MAKE) -C $(KDIR) M=$$PWD clean
